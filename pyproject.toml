@@ -1,0 +1,18 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "graphs_ssimon"
+version = "0.0.1"
+authors = [
+  { name="Samuel Simon", email="ssimon7@msudenver.edu" },
+]
+description = "Graph algorithms, including Dijkstra's shortest path"
+readme = "README.md"
+requires-python = ">=3.10"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]

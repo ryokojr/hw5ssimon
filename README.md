@@ -19,7 +19,7 @@ You should create a public GitHub repository for your project to allow others to
 To receive credit for this assignment, update the README file and add the URL of your public GitHub repository below.
 
 ```
-URL for your GitHub repository: 
+URL for your GitHub repository: https://github.com/ryokojr/hw5ssimon
 ```
 
 The expected structure for the GitHub repository is the following: 
