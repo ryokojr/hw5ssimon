@@ -1,5 +1,7 @@
 # graphs_ssimon
 
+Had AI teach me for the bonus point section and ideas for what to add to readme.
+
 A small Python library of graph algorithms, written for CS 3250 at MSU Denver.
 
 A graph here is a dictionary of dictionaries. `graph[u][v] = w` means you can travel from
