@@ -1,3 +1,64 @@
+# graphs_ssimon
+
+Had AI teach me for the bonus point section and ideas for what to add to readme.
+
+A small Python library of graph algorithms, written for CS 3250 at MSU Denver.
+
+A graph here is a dictionary of dictionaries. `graph[u][v] = w` means you can travel from
+vertex `u` to vertex `v` at a cost of `w`:
+
+```python
+graph = {0: {1: 4, 7: 8},
+         1: {0: 4, 2: 8}}
+```
+
+The `data` folder has example graphs stored as plain text, one edge per line, written as
+`source destination weight`.
+
+## Install
+
+```
+pip install git+https://github.com/ryokojr/hw5ssimon.git
+```
+
+## What's in it
+
+**`sp.dijkstra(graph, source)`** — Dijkstra's shortest path algorithm. Finds the cheapest
+route from `source` to every vertex it can reach, adding up the edge weights along the way.
+It returns two dictionaries: the total cost to reach each vertex, and the list of vertices
+you pass through to get there.
+
+```python
+from graphs_ssimon import sp
+
+dist, path = sp.dijkstra(graph, 0)
+print(dist[8])   # 14  -- cheapest total cost from vertex 0 to vertex 8
+print(path[8])   # [0, 1, 2]  -- the vertices visited on the way
+```
+
+**`bfs.bfs(graph, source)`** — breadth-first search. Finds the route with the *fewest edges*
+instead of the cheapest one, so the weights are ignored. Useful when every step costs the
+same, like counting how many connections away something is.
+
+```python
+from graphs_ssimon import bfs
+
+hops, path = bfs.bfs(graph, 0)
+print(hops[8])   # 2  -- vertex 8 is two edges from vertex 0
+print(path[8])   # [0, 7]
+```
+
+The two can disagree, and that's the point: reaching vertex 8 takes 2 edges but costs 15,
+while the cheapest route costs 14 and takes 3 edges.
+
+## Running the example
+
+```
+python test.py data/example1.txt
+```
+
+---
+
 # Overview 
 
 The goal of this assignment is to assess your understanding of how to package a software library, as discussed in class.
